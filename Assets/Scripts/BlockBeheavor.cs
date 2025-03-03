@@ -58,12 +58,15 @@ public class BlockBeheavor : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) 
     {
+        Debug.Log("Hit");
         if (collision.gameObject.CompareTag("Ball")) 
         {
+            Debug.Log("Hit by the ball"); 
             currentHp--; 
             if(currentHp < 0)
                 currentHp = 0;
         }
     }
+    
 
 }
