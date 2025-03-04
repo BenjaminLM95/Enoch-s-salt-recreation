@@ -6,11 +6,10 @@ public class BlockBeheavor : MonoBehaviour
 {
     public int maxHp;
     private int currentHp;
-    private int hp;
+    [SerializeField] private int hp;
     public SpriteRenderer spriteRenderer; 
     public Sprite _spriteHP1;
-    public Sprite _spriteHP2;
-    public Sprite _spriteHP3;
+    public Sprite _spriteHP2;   
     public Sprite _spriteDefault;
 
     // Start is called before the first frame update
@@ -39,10 +38,7 @@ public class BlockBeheavor : MonoBehaviour
     public void UpdateSprite(int health) 
     {
         switch (health) 
-        {
-            case 3: 
-                spriteRenderer.sprite = _spriteHP3;
-                break;
+        {            
             case 2:
                 spriteRenderer.sprite = _spriteHP2; 
                 break;
