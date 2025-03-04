@@ -8,6 +8,8 @@ public class CrossBlock : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite _spriteDefault;
     public Sprite _spriteHit;
+    public GameObject _playerBar;
+     
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,13 @@ public class CrossBlock : MonoBehaviour
             if (!hit) {
                 hit = true;                
                 spriteRenderer.sprite = _spriteHit; 
+                DecreaseBar();
             }
         }
+    }
+
+    public void DecreaseBar() 
+    {
+        _playerBar.gameObject.transform.localScale = new Vector3(_playerBar.gameObject.transform.localScale.x * 0.8f, 0.5f, 1f);         
     }
 }

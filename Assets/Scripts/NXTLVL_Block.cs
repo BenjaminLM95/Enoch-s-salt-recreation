@@ -8,6 +8,7 @@ public class NXTLVL_Block : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite _spriteDefault;
     public Sprite _spriteHit;
+    public LevelManagement _lvlMgt; 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class NXTLVL_Block : MonoBehaviour
             {
                 hit = true;
                 spriteRenderer.sprite = _spriteHit;
+                _lvlMgt.onePoint(); 
             }
         }
     }
