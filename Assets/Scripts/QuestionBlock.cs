@@ -59,7 +59,7 @@ public class QuestionBlock : MonoBehaviour
         else 
         {
             spriteRenderer.sprite = _spriteEffect3;
-            Debug.Log("Return to original size"); 
+            playerBar.gameObject.transform.localScale = new Vector3(2.5f, 0.5f, 1f);
         }
 
         Debug.Log(number); 

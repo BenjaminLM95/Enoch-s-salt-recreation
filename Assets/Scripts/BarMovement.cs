@@ -6,11 +6,13 @@ public class BarMovement : MonoBehaviour
 {
     private float speed;
     private Vector3 movement;
+    private Vector3 initialScale; 
     // Start is called before the first frame update
     void Start()
     {
         speed = 1f;
         movement = new Vector3(1, 0, 0); 
+        initialScale = this.transform.localScale;
     }
 
     // Update is called once per frame
@@ -27,6 +29,11 @@ public class BarMovement : MonoBehaviour
         }
 
 
+    }
+
+    public void originalScale() 
+    {
+        this.transform.localScale = initialScale;
     }
     
 }

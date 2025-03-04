@@ -25,6 +25,7 @@ public class LevelManagement : MonoBehaviour
         if (nxtlvlPoints < maxPoints)
         {
             nxtlvlPoints++;
+            if(nxtlvlPoints == maxPoints )
             SceneManager.LoadScene(nextLevel);
         }
     }
