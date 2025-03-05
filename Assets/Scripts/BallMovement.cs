@@ -9,14 +9,15 @@ public class BallMovement : MonoBehaviour
     float iBulletSpeed = 5.0f; 
     public RaycastHit2D hit;
     public LayerMask obstacles;
-    private Vector3 initialPosition;
-   
+    private Vector3 initialPosition;   
+
 
     // Start is called before the first frame update
     void Start()
     {
         pos = new Vector3(1, 1, 0);        
         initialPosition = this.gameObject.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -27,7 +28,9 @@ public class BallMovement : MonoBehaviour
 
         if (hit)
         {
-            pos = Vector3.Reflect(pos, hit.normal);         
+            pos = Vector3.Reflect(pos, hit.normal);
+            
+
         } 
 
         if(this.gameObject.transform.position.y < -10) 

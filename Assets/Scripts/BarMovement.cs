@@ -10,7 +10,7 @@ public class BarMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 1f;
+        speed = 1.5f;
         movement = new Vector3(1, 0, 0); 
         initialScale = this.transform.localScale;
     }

@@ -13,6 +13,7 @@ public class QuestionBlock : MonoBehaviour
     public GameObject playerBar;
     public BallMovement _ballMovement;
     public GameObject extraBall;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class QuestionBlock : MonoBehaviour
             if (!hit)
             {
                 hit = true;
-                GetAnEffect(); 
+                GetAnEffect();                
             }
         }
     }

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpikeScene.unity
     guid: 7a4b5aea6e5900b4c873c2e32e5d09eb
+  - enabled: 1
+    path: Assets/Scenes/ForthLevel.unity
+    guid: e3cb1d23a7caae44495364135627f7f8
   m_configObjects: {}

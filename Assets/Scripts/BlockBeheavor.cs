@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockBeheavor : MonoBehaviour
 {
     public int maxHp;
-    private int currentHp;
-    [SerializeField] private int hp;
+    [SerializeField] private int currentHp;
+    public int hp;
     public SpriteRenderer spriteRenderer; 
     public Sprite _spriteHP1;
     public Sprite _spriteHP2;   
-    public Sprite _spriteDefault;
+    public Sprite _spriteDefault;    
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class BlockBeheavor : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         hp = maxHp;
         currentHp = maxHp;
+        
     }
 
     // Update is called once per frame
@@ -27,9 +29,12 @@ public class BlockBeheavor : MonoBehaviour
         {
             hp = currentHp;
             if (hp > 0)
-                UpdateSprite(hp); 
+                UpdateSprite(hp);
             else
+            {
+                if(this.gameObject.name == "Angel") { Application.Quit();  }
                 this.gameObject.SetActive(false);
+            }
         }
 
         
@@ -55,7 +60,8 @@ public class BlockBeheavor : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) 
     {        
         if (collision.gameObject.CompareTag("Ball")) 
-        {            
+        {
+            
             currentHp--; 
             if(currentHp < 0)
                 currentHp = 0;
